@@ -49,7 +49,7 @@ img {
 
 .wrapper {
     width: 40vw;
-    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+    background-image: linear-gradient(360deg, #09203f 0%, #537895 100%);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -72,7 +72,7 @@ img {
 .navigation {
     display: flex;
     justify-content: space-between;
-    margin-top: 1rem;
+    margin: 1rem 0 0;
 }
 
 /* text section */
@@ -115,6 +115,27 @@ img {
     border-radius: 1rem;
     background-color: #fff;
     border: 0.2rem solid #fff;
+    transition: all 0.2s ease-in-out;
+}
+
+/* slider-btn when hovered */
+.slider-btn-wrapper label .slider-btn:hover {
+    background-color: #67d1c7;
+    border: none;
+}
+/* when input checked btn bg will be change by order */
+#meme-img-1:checked~.navigation .slider-btn.btn1,
+#meme-img-2:checked~.navigation .slider-btn.btn2,
+#meme-img-3:checked~.navigation .slider-btn.btn3,
+#meme-img-4:checked~.navigation .slider-btn.btn4 {
+    background-color: transparent;
+}
+
+#meme-img-1:checked~.navigation .slider-btn.btn1:hover,
+#meme-img-2:checked~.navigation .slider-btn.btn2:hover,
+#meme-img-3:checked~.navigation .slider-btn.btn3:hover,
+#meme-img-4:checked~.navigation .slider-btn.btn4:hover{
+    border: 0.2rem solid #67d1c7;
 }
 
 /* slider buttons works when inputs are checked */
