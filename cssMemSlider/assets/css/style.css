@@ -117,12 +117,15 @@ img {
     border: 0.2rem solid #fff;
     transition: all 0.2s ease-in-out;
 }
-
-/* slider-btn when hovered */
-.slider-btn-wrapper label .slider-btn:hover {
+.slider-btn-wrapper label:active{
+    transform: scale(0.8);
+}
+/* label when hovered */
+.slider-btn-wrapper label:hover .slider-btn {
     background-color: #67d1c7;
     border: none;
 }
+
 /* when input checked btn bg will be change by order */
 #meme-img-1:checked~.navigation .slider-btn.btn1,
 #meme-img-2:checked~.navigation .slider-btn.btn2,
@@ -131,10 +134,11 @@ img {
     background-color: transparent;
 }
 
-#meme-img-1:checked~.navigation .slider-btn.btn1:hover,
-#meme-img-2:checked~.navigation .slider-btn.btn2:hover,
-#meme-img-3:checked~.navigation .slider-btn.btn3:hover,
-#meme-img-4:checked~.navigation .slider-btn.btn4:hover{
+/* when checked inputs hovered change border color */
+#meme-img-1:checked~.navigation label:hover .slider-btn.btn1,
+#meme-img-2:checked~.navigation label:hover .slider-btn.btn2,
+#meme-img-3:checked~.navigation label:hover .slider-btn.btn3,
+#meme-img-4:checked~.navigation label:hover .slider-btn.btn4 {
     border: 0.2rem solid #67d1c7;
 }
 
