@@ -56,6 +56,7 @@ img {
     padding: 1rem;
     border-radius: 1rem;
     overflow: hidden;
+    margin: 0 0 1rem;
 }
 
 .slider-img-wrapper {
@@ -109,6 +110,10 @@ img {
     margin: 0 0 0 0.5rem;
 }
 
+.slider-btn-wrapper label:nth-child(1) {
+    margin: 0;
+}
+
 .slider-btn-wrapper label .slider-btn {
     width: 1rem;
     height: 1rem;
@@ -117,9 +122,11 @@ img {
     border: 0.2rem solid #fff;
     transition: all 0.2s ease-in-out;
 }
-.slider-btn-wrapper label:active{
+
+.slider-btn-wrapper label:active {
     transform: scale(0.8);
 }
+
 /* label when hovered */
 .slider-btn-wrapper label:hover .slider-btn {
     background-color: #67d1c7;
@@ -183,6 +190,98 @@ img {
 
 #meme-img-4:checked~.navigation .slider-text .text-img-1 {
     transform: translate(-300%);
+}
+
+@media screen and (max-width:1300px) {
+    .wrapper {
+        width: 50vw;
+    }
+}
+
+@media screen and (max-width:1100px) {
+    .wrapper {
+        width: 60vw;
+    }
+}
+
+@media screen and (max-width:930px) {
+    body {
+        width: 70vw;
+    }
+
+    .wrapper {
+        width: 70vw;
+    }
+}
+
+@media screen and (max-width:780px) {
+    body {
+        width: 80vw;
+    }
+
+    .wrapper {
+        width: 80vw;
+    }
+}
+
+@media screen and (max-width:700px) {
+    body {
+        width: 85vw;
+    }
+
+    .wrapper {
+        width: 85vw;
+    }
+
+    .title {
+        font-size: 1.4rem;
+    }
+
+    .slider-text .text {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        width: 90vw;
+    }
+
+    .wrapper {
+        width: 90vw;
+    }
+
+    .navigation {
+        flex-direction: column;
+    }
+
+    .navigation .slider-btn-wrapper {
+        order: unset;
+        margin: 0 auto;
+        justify-content: center;
+    }
+
+    .navigation .slider-text {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .navigation .slider-text .text {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .title {
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+}
+@media screen and (max-width: 320px) {
+    .title {
+        font-size: 1rem;
+        padding: 1rem;
+    }
 }
 
 @keyframes hue {
