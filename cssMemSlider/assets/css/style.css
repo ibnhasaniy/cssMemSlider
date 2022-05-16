@@ -26,6 +26,8 @@ body {
     color: #fff;
 }
 
+/* all images same size if u have different images edit height
+ to auto and after than center it by using flexbox in .img-item */
 img {
     width: 100%;
     height: 100%;
@@ -36,15 +38,25 @@ img {
     margin: 1rem 1rem 2rem;
     padding: 1rem 2rem;
     border-radius: 1rem;
-    -webkit-box-shadow: 5px 5px 15px 5px #ff8080, -9px 5px 15px 5px #ffe488,
-        -7px -5px 15px 5px #8cff85, 12px -5px 15px 5px #80c7ff,
-        12px 10px 15px 7px #e488ff, -10px 10px 15px 7px #ff616b,
-        -10px -7px 27px 1px #8e5cff, 5px 5px 15px 5px rgba(0, 0, 0, 0);
-    box-shadow: 5px 5px 15px 5px #ff8080, -9px 5px 15px 5px #ffe488,
-        -7px -5px 15px 5px #8cff85, 12px -5px 15px 5px #80c7ff,
-        12px 10px 15px 7px #e488ff, -10px 10px 15px 7px #ff616b,
-        -10px -7px 27px 1px #8e5cff, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    /* all px converted to rem by using px to rem extension */
+    -webkit-box-shadow: 0.3125rem 0.3125rem 0.9375rem 0.3125rem #ff8080,
+        -0.5625rem 0.3125rem 0.9375rem 0.3125rem #ffe488,
+        -0.4375rem -0.3125rem 0.9375rem 0.3125rem #8cff85,
+        0.75rem -0.3125rem 0.9375rem 0.3125rem #80c7ff,
+        0.75rem 0.625rem 0.9375rem 0.4375rem #e488ff,
+        -0.625rem 0.625rem 0.9375rem 0.4375rem #ff616b,
+        -0.625rem -0.4375rem 1.6875rem 0.0625rem #8e5cff,
+        0.3125rem 0.3125rem 0.9375rem 0.3125rem rgba(0, 0, 0, 0);
+    box-shadow: 0.3125rem 0.3125rem 0.9375rem 0.3125rem #ff8080,
+        -0.5625rem 0.3125rem 0.9375rem 0.3125rem #ffe488,
+        -0.4375rem -0.3125rem 0.9375rem 0.3125rem #8cff85,
+        0.75rem -0.3125rem 0.9375rem 0.3125rem #80c7ff,
+        0.75rem 0.625rem 0.9375rem 0.4375rem #e488ff,
+        -0.625rem 0.625rem 0.9375rem 0.4375rem #ff616b,
+        -0.625rem -0.4375rem 1.6875rem 0.0625rem #8e5cff,
+        0.3125rem 0.3125rem 0.9375rem 0.3125rem rgba(0, 0, 0, 0);
     animation: hue 3s linear infinite;
+    -webkit-animation: hue 3s linear infinite;
 }
 
 .wrapper {
@@ -62,8 +74,12 @@ img {
 .slider-img-wrapper {
     display: flex;
     gap: 1rem;
-    transition: all 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+    transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
     width: calc(400% + 1rem * 3);
+    -webkit-transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+    -moz-transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+    -ms-transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+    -o-transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 
 .slider-img-wrapper .img-item {
@@ -89,7 +105,11 @@ img {
     width: 100%;
     font-size: 1.5rem;
     text-transform: uppercase;
-    transition: all 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+    -webkit-transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+    transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+    -moz-transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+    -ms-transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+    -o-transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 
 .slider-btn-wrapper {
@@ -121,6 +141,10 @@ img {
     background-color: #fff;
     border: 0.2rem solid #fff;
     transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
 }
 
 .slider-btn-wrapper label:active {
@@ -164,15 +188,15 @@ img {
     * -1 --> how many img size to left
     
     */
-    transform: translate(calc(((100% + 1rem)/4) * -1));
+    transform: translate(calc(((100% + 1rem) / 4) * -1));
 }
 
 #meme-img-3:checked~.slider-img-wrapper {
-    transform: translate(calc(((100% + 1rem)/4) * -2));
+    transform: translate(calc(((100% + 1rem) / 4) * -2));
 }
 
 #meme-img-4:checked~.slider-img-wrapper {
-    transform: translate(calc(((100% + 1rem)/4) * -3));
+    transform: translate(calc(((100% + 1rem) / 4) * -3));
 }
 
 /* texts willl be change when inputs are checked */
@@ -192,19 +216,20 @@ img {
     transform: translate(-300%);
 }
 
-@media screen and (max-width:1300px) {
+/* Media queries for big than 1300px */
+@media screen and (max-width: 1300px) {
     .wrapper {
         width: 50vw;
     }
 }
 
-@media screen and (max-width:1100px) {
+@media screen and (max-width: 1100px) {
     .wrapper {
         width: 60vw;
     }
 }
 
-@media screen and (max-width:930px) {
+@media screen and (max-width: 930px) {
     body {
         width: 70vw;
     }
@@ -214,7 +239,7 @@ img {
     }
 }
 
-@media screen and (max-width:780px) {
+@media screen and (max-width: 780px) {
     body {
         width: 80vw;
     }
@@ -224,7 +249,7 @@ img {
     }
 }
 
-@media screen and (max-width:700px) {
+@media screen and (max-width: 700px) {
     body {
         width: 85vw;
     }
@@ -245,6 +270,11 @@ img {
 @media screen and (max-width: 600px) {
     body {
         width: 90vw;
+    }
+
+    .title {
+        font-size: 1.2rem;
+        padding: 1rem;
     }
 
     .wrapper {
@@ -271,12 +301,13 @@ img {
     }
 }
 
-@media screen and (max-width: 600px) {
-    .title {
-        font-size: 1.2rem;
-        padding: 1rem;
+@media screen and (max-width: 400px) {
+    .wrapper {
+        width: 95vw;
+        padding: 0.5rem;
     }
 }
+
 @media screen and (max-width: 320px) {
     .title {
         font-size: 1rem;
@@ -292,5 +323,4 @@ img {
     to {
         filter: hue-rotate(360deg);
     }
-
 }
