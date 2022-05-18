@@ -1,0 +1,343 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", Ubuntu, sans-serif;
+}
+
+input {
+    display: none;
+}
+
+body {
+    background-color: #d9afd9;
+    background-image: linear-gradient(225deg,
+            #d9afd9 0%,
+            #97d9e1 33%,
+            #67d1c7 66%,
+            #8178cf 100%);
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    min-height: 100vh;
+    color: #fff;
+}
+
+/* all images same size if u have different images edit height
+ to auto and after than center it by using flexbox in .img-item */
+img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.7rem;
+}
+
+.title {
+    margin: 1rem 1rem 2rem;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    /* all px converted to rem by using px to rem extension */
+    -webkit-box-shadow: 0.3125rem 0.3125rem 0.9375rem 0.3125rem #ff8080,
+        -0.5625rem 0.3125rem 0.9375rem 0.3125rem #ffe488,
+        -0.4375rem -0.3125rem 0.9375rem 0.3125rem #8cff85,
+        0.75rem -0.3125rem 0.9375rem 0.3125rem #80c7ff,
+        0.75rem 0.625rem 0.9375rem 0.4375rem #e488ff,
+        -0.625rem 0.625rem 0.9375rem 0.4375rem #ff616b,
+        -0.625rem -0.4375rem 1.6875rem 0.0625rem #8e5cff,
+        0.3125rem 0.3125rem 0.9375rem 0.3125rem rgba(0, 0, 0, 0);
+    box-shadow: 0.3125rem 0.3125rem 0.9375rem 0.3125rem #ff8080,
+        -0.5625rem 0.3125rem 0.9375rem 0.3125rem #ffe488,
+        -0.4375rem -0.3125rem 0.9375rem 0.3125rem #8cff85,
+        0.75rem -0.3125rem 0.9375rem 0.3125rem #80c7ff,
+        0.75rem 0.625rem 0.9375rem 0.4375rem #e488ff,
+        -0.625rem 0.625rem 0.9375rem 0.4375rem #ff616b,
+        -0.625rem -0.4375rem 1.6875rem 0.0625rem #8e5cff,
+        0.3125rem 0.3125rem 0.9375rem 0.3125rem rgba(0, 0, 0, 0);
+    animation: hue 3s linear infinite;
+    -webkit-animation: hue 3s linear infinite;
+}
+
+.wrapper {
+    width: 40vw;
+    background-image: linear-gradient(360deg, #09203f 0%, #537895 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    margin: 0 0 1rem;
+}
+
+.slider-img-wrapper {
+    display: flex;
+    gap: 1rem;
+    transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+    width: calc(400% + 1rem * 3);
+    -webkit-transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+    -moz-transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+    -ms-transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+    -o-transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+.slider-img-wrapper .img-item {
+    width: calc((100% + 1rem) / 4);
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0 0;
+}
+
+/* text section */
+.slider-text {
+    display: flex;
+    width: 70%;
+    min-width: 70%;
+    overflow: hidden;
+}
+
+.slider-text .text {
+    min-width: 100%;
+    width: 100%;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    -webkit-transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+    transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+    -moz-transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+    -ms-transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+    -o-transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+.slider-btn-wrapper {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+    order: 2;
+}
+
+.slider-btn-wrapper label {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 0 0.5rem;
+    user-select: none;
+}
+
+.slider-btn-wrapper label:nth-child(1) {
+    margin: 0;
+}
+
+.slider-btn-wrapper label .slider-btn {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 1rem;
+    background-color: #fff;
+    border: 0.2rem solid #fff;
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+}
+
+.slider-btn-wrapper label:active {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
+
+/* label when hovered */
+.slider-btn-wrapper label:hover .slider-btn {
+    background-color: #67d1c7;
+    border: none;
+}
+
+/* when input checked btn bg will be change by order */
+#meme-img-1:checked~.navigation .slider-btn.btn1,
+#meme-img-2:checked~.navigation .slider-btn.btn2,
+#meme-img-3:checked~.navigation .slider-btn.btn3,
+#meme-img-4:checked~.navigation .slider-btn.btn4 {
+    background-color: transparent;
+    animation: pulse 0.8s infinite, hue 2s infinite;
+    -webkit-animation: pulse 0.8s infinite, hue 2s infinite;
+}
+
+/* when checked inputs hovered change border color */
+#meme-img-1:checked~.navigation label:hover .slider-btn.btn1,
+#meme-img-2:checked~.navigation label:hover .slider-btn.btn2,
+#meme-img-3:checked~.navigation label:hover .slider-btn.btn3,
+#meme-img-4:checked~.navigation label:hover .slider-btn.btn4 {
+    border: 0.2rem solid #67d1c7;
+}
+
+/* slider buttons works when inputs are checked */
+#meme-img-1:checked~.slider-img-wrapper {
+    transform: translate(0);
+}
+
+#meme-img-2:checked~.slider-img-wrapper {
+    /* 
+
+    (((100% + 1rem)/4) * -2) 
+    100% --> all width of .slider-img-wrapper
+    1rem --> size of given gap
+    /4 ----> count of img memes
+    * -1 --> how many img size to left
+    
+    */
+    transform: translate(calc(((100% + 1rem) / 4) * -1));
+}
+
+#meme-img-3:checked~.slider-img-wrapper {
+    transform: translate(calc(((100% + 1rem) / 4) * -2));
+}
+
+#meme-img-4:checked~.slider-img-wrapper {
+    transform: translate(calc(((100% + 1rem) / 4) * -3));
+}
+
+/* texts willl be change when inputs are checked */
+#meme-img-1:checked~.navigation .slider-text .text-img-1 {
+    transform: translate(0);
+}
+
+#meme-img-2:checked~.navigation .slider-text .text-img-1 {
+    transform: translate(-100%);
+}
+
+#meme-img-3:checked~.navigation .slider-text .text-img-1 {
+    transform: translate(-200%);
+}
+
+#meme-img-4:checked~.navigation .slider-text .text-img-1 {
+    transform: translate(-300%);
+}
+
+/* Media queries for big than 1300px */
+@media screen and (max-width: 1300px) {
+    .wrapper {
+        width: 50vw;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .wrapper {
+        width: 60vw;
+    }
+}
+
+@media screen and (max-width: 930px) {
+    body {
+        width: 70vw;
+    }
+
+    .wrapper {
+        width: 70vw;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    body {
+        width: 80vw;
+    }
+
+    .wrapper {
+        width: 80vw;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    body {
+        width: 85vw;
+    }
+
+    .wrapper {
+        width: 85vw;
+    }
+
+    .title {
+        font-size: 1.4rem;
+    }
+
+    .slider-text .text {
+        font-size: 1.4rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        width: 90vw;
+    }
+
+    .title {
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+
+    .wrapper {
+        width: 90vw;
+    }
+
+    .navigation {
+        flex-direction: column;
+    }
+
+    .navigation .slider-btn-wrapper {
+        order: unset;
+        margin: 0 auto;
+        justify-content: center;
+    }
+
+    .navigation .slider-text {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .navigation .slider-text .text {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .wrapper {
+        width: 95vw;
+        padding: 0.5rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .title {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+}
+
+@keyframes hue {
+    from {
+        filter: hue-rotate(0deg);
+    }
+
+    to {
+        filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0.3125rem #11999e;
+    }
+
+    100% {
+        box-shadow: 0 0 0 0.625rem transparent;
+    }
+}
